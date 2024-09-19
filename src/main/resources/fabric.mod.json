@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "hypixel-custom-name",
+	"version": "${version}",
+	"name": "Hypixel Custom Name",
+	"description": "Allows you to fully customise your IGN on Hypixel",
+	"authors": [
+		"Ownwn"
+	],
+	"contact": {
+		"homepage": "https://github.com/Ownwn/Hypixel-Custom-Name",
+		"sources": "https://github.com/Ownwn/Hypixel-Custom-Name"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/hypixel-custom-name/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			{
+				"value": "com.ownwn.HypixelCustomName",
+				"adapter": "kotlin"
+			}
+		],
+		"modmenu": [
+			"com.ownwn.config.ModMenu"
+		]
+	},
+	"mixins": [
+		"hypixel-custom-name.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*",
+		"yet_another_config_lib_v3": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
