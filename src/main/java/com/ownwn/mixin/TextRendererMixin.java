@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(TextRenderer.class)
 public class TextRendererMixin {
-    @ModifyVariable(at = @At("HEAD"), method = "drawInternal(Lnet/minecraft/text/OrderedText;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/render/VertexConsumerProvider;Lnet/minecraft/client/font/TextRenderer$TextLayerType;II)I", ordinal = 0, argsOnly = true)
+    @ModifyVariable(at = @At("HEAD"), method = "drawInternal(Lnet/minecraft/text/OrderedText;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/render/VertexConsumerProvider;Lnet/minecraft/client/font/TextRenderer$TextLayerType;IIZ)I", ordinal = 0, argsOnly = true)
     public OrderedText drawInternal(OrderedText value) {
         return CustomNames.Companion.replaceName(value);
     }
