@@ -1,4 +1,4 @@
-## Hypixel Custom Name
+## Client Custom Name
 
 A Fabric mod to customise your name client-side. Works on any server, with support for custom Hypixel ranks
 
