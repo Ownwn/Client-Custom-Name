@@ -7,3 +7,6 @@ A Fabric mod to customise your name client-side. Works on any server, with suppo
 **Versions**
 - 1.21: _main_ branch
 - 1.21.5: _1.21.5_ branch
+
+
+[https://modrinth.com/mod/client-custom-name](https://modrinth.com/mod/client-custom-name)
