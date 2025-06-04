@@ -1,0 +1,56 @@
+{
+    "yacl3.config.client-custom-name:config.category.custom_name": "Custom Name",
+
+        "yacl3.config.client-custom-name:config.customNameToggle": "Custom Name",
+        "yacl3.config.client-custom-name:config.customNameToggle.desc": "Toggle displaying your custom name",
+
+        "yacl3.config.client-custom-name:config.customName": "Custom Name",
+        "yacl3.config.client-custom-name:config.customName.desc": "Customise your IGN",
+
+        "yacl3.config.client-custom-name:config.customNameType": "Name Colour Type",
+        "yacl3.config.client-custom-name:config.customNameType.desc": "Customise the way your name is displayed",
+
+        "yacl3.config.client-custom-name:config.staticNameColour": "Static Name Colour",
+        "yacl3.config.client-custom-name:config.staticNameColour.desc": "The colour to use if you select Static Colour for your custom name",
+
+    "yacl3.config.client-custom-name:config.category.custom_rank": "Custom Rank",
+
+        "yacl3.config.client-custom-name:config.manualRankSelector": "Hypixel Rank",
+        "yacl3.config.client-custom-name:config.manualRankSelector.desc": "You must manually select your rank for the mod to work. ",
+
+        "yacl3.config.client-custom-name:config.customRankToggle": "Custom Rank (Hypixel only)",
+        "yacl3.config.client-custom-name:config.customRankToggle.desc": "Toggle displaying your custom rank on Hypixel",
+
+        "yacl3.config.client-custom-name:config.customRank": "Custom Rank (Hypixel only)",
+        "yacl3.config.client-custom-name:config.customRank.desc": "Customise your rank on Hypixel",
+
+        "yacl3.config.client-custom-name:config.customRankType": "Rank Colour Type",
+        "yacl3.config.client-custom-name:config.customRAnkType.desc": "Customise the way your rank is displayed",
+
+        "yacl3.config.client-custom-name:config.staticRankColour": "Static Rank Colour",
+        "yacl3.config.client-custom-name:config.staticRankColour.desc": "The colour to use if you select Static Colour for your custom rank",
+
+
+
+
+    "yacl3.config.client-custom-name:config.category.chroma": "Chroma",
+
+        "yacl3.config.client-custom-name:config.chromaBrightness": "Chroma Brightness",
+        "yacl3.config.client-custom-name:config.chromaBrightness.desc": "Brightness of Fancy Chroma",
+
+        "yacl3.config.client-custom-name:config.chromaSaturation": "Chroma Saturation",
+        "yacl3.config.client-custom-name:config.chromaSaturation.desc": "Saturation of Fancy Chroma",
+
+        "yacl3.config.client-custom-name:config.chromaScale": "Chroma Scale",
+        "yacl3.config.client-custom-name:config.chromaScale.desc": "How much each character should change the chroma",
+
+        "yacl3.config.client-custom-name:config.chromaSpeed": "Chroma Speed",
+        "yacl3.config.client-custom-name:config.chromaSpeed.desc": "How fast the chroma should cycle",
+
+        "yacl3.config.client-custom-name:config.reverseChromaDirection": "Reverse Chroma Direction",
+        "yacl3.config.client-custom-name:config.reverseChromaDirection.desc": "Reverse the direction the chroma scrolls",
+
+        "yacl3.config.enum.ChromaType.fancy_chroma": "Fancy Chroma",
+        "yacl3.config.enum.ChromaType.plain_chroma": "Plain Chroma",
+        "yacl3.config.enum.ChromaType.static_colour": "Static Colour"
+}

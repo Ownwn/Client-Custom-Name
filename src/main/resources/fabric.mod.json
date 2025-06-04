@@ -1,23 +1,23 @@
 {
 	"schemaVersion": 1,
-	"id": "hypixel-custom-name",
+	"id": "client-custom-name",
 	"version": "${version}",
-	"name": "Hypixel Custom Name",
-	"description": "Allows you to fully customise your IGN on Hypixel",
+	"name": "Client Custom Name",
+	"description": "A Fabric mod to customise your name client-side. Works on any server, with support for custom Hypixel ranks",
 	"authors": [
 		"Ownwn"
 	],
 	"contact": {
-		"homepage": "https://github.com/Ownwn/Hypixel-Custom-Name",
-		"sources": "https://github.com/Ownwn/Hypixel-Custom-Name"
+		"homepage": "https://github.com/Ownwn/Client-Custom-Name",
+		"sources": "https://github.com/Ownwn/Client-Custom-Name"
 	},
 	"license": "GPL-3.0",
-	"icon": "assets/hypixel-custom-name/icon.png",
+	"icon": "assets/client-custom-name/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"client": [
 			{
-				"value": "com.ownwn.HypixelCustomName",
+				"value": "com.ownwn.ClientCustomName",
 				"adapter": "kotlin"
 			}
 		],
@@ -26,7 +26,7 @@
 		]
 	},
 	"mixins": [
-		"hypixel-custom-name.mixins.json"
+		"client-custom-name.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.5",

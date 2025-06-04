@@ -1,6 +1,6 @@
 package com.ownwn.config
 
-import com.ownwn.HypixelCustomName
+import com.ownwn.ClientCustomName
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler
 import dev.isxander.yacl3.config.v2.api.SerialEntry
 import dev.isxander.yacl3.config.v2.api.autogen.*
@@ -14,10 +14,10 @@ import java.awt.Color
 class Config {
     companion object {
         private val HANDLER: ConfigClassHandler<Config> = ConfigClassHandler.createBuilder(Config::class.java)
-            .id(Identifier.of(HypixelCustomName.MODID, "config"))
+            .id(Identifier.of(ClientCustomName.MODID, "config"))
             .serializer { config ->
                 GsonConfigSerializerBuilder.create(config)
-                    .setPath(FabricLoader.getInstance().configDir.resolve( HypixelCustomName.MODID + ".json5"))
+                    .setPath(FabricLoader.getInstance().configDir.resolve( ClientCustomName.MODID + ".json5"))
                     .setJson5(true)
                     .build()
             }
