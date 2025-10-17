@@ -17,6 +17,34 @@ class CustomNames {
         }
 
         /** @return An edited `OrderedText` with the player's custom name and rank*/
+        fun replaceName(string: String): String {
+            val username = MinecraftClient.getInstance().player?.name?.string ?: return string
+
+            val customRankEnabled = config.customRankToggle && config.customRank.isNotEmpty()
+            val customNameEnabled = config.customNameToggle && config.customName.isNotEmpty()
+
+
+            if (!customNameEnabled || !string.contains(username)) return string
+
+            var newString = string;
+
+            // loop in case username appears in multiple places
+            // todo could get stuck if config.customName == player.username?
+            while (string.contains(username)) {
+
+                // replace rank
+                if (customRankEnabled && newString.contains(config.manualRankSelector + " " + username)) {
+                    newString = newString.replace(config.manualRankSelector, config.customRank)
+                }
+
+                // replace name
+                newString = newString.replace(username, config.customName)
+            }
+
+            return newString
+        }
+
+        /** @return An edited `OrderedText` with the player's custom name and rank*/
         fun replaceName(text: OrderedText): OrderedText {
             val username = MinecraftClient.getInstance().player?.name?.string ?: return text
 
