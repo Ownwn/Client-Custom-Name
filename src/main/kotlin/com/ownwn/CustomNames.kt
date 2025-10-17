@@ -16,21 +16,28 @@ class CustomNames {
             return TextUtils.openOrderedText(this).joinToString("") { it.string }.contains(string)
         }
 
-        /** @return An edited `OrderedText` with the player's custom name and rank*/
-        fun replaceName(string: String): String {
-            val username = MinecraftClient.getInstance().player?.name?.string ?: return string
+        /** returns the players username, or null if not enabled */
+        private fun getUsername(): String? {
+            val username = MinecraftClient.getInstance().player?.name?.string
 
-            val customRankEnabled = config.customRankToggle && config.customRank.isNotEmpty()
             val customNameEnabled = config.customNameToggle && config.customName.isNotEmpty()
 
+            // if player's name is same as username then return to avoid infinite .replace loop
+            if (!customNameEnabled || config.customName == username) return null
+            return username
+        }
 
-            if (!customNameEnabled || !string.contains(username)) return string
+        /** @return An edited `OrderedText` with the player's custom name and rank*/
+        fun replaceName(string: String): String {
+            val username = getUsername() ?: return string
+            val customRankEnabled = config.customRankToggle && config.customRank.isNotEmpty()
 
             var newString = string;
 
             // loop in case username appears in multiple places
-            // todo could get stuck if config.customName == player.username?
-            while (string.contains(username)) {
+            // weird things can happen in the YACL editor with this, have a failsafe counter just in case
+            var repetitionCounter = 0;
+            while (++repetitionCounter < 10 && string.contains(username)) {
 
                 // replace rank
                 if (customRankEnabled && newString.contains(config.manualRankSelector + " " + username)) {
@@ -46,13 +53,8 @@ class CustomNames {
 
         /** @return An edited `OrderedText` with the player's custom name and rank*/
         fun replaceName(text: OrderedText): OrderedText {
-            val username = MinecraftClient.getInstance().player?.name?.string ?: return text
-
+            val username = getUsername() ?: return text
             val customRankEnabled = config.customRankToggle && config.customRank.isNotEmpty()
-            val customNameEnabled = config.customNameToggle && config.customName.isNotEmpty()
-
-
-            if (!customNameEnabled) return text
 
             val originalTextArray = TextUtils.openOrderedText(text)
             if (!originalTextArray.joinToString("") { it.string }.contains(username)) return text
@@ -61,8 +63,9 @@ class CustomNames {
             var currentText = text
 
             // loop in case username appears in multiple places
-            // todo could get stuck if config.customName == player.username?
-            while (currentText.contains(username)) {
+            // weird things can happen in the YACL editor with this, have a failsafe counter just in case
+            var repetitionCounter = 0;
+            while (++repetitionCounter < 10 && currentText.contains(username)) {
 
                 // replace rank
                 if (customRankEnabled && currentText.contains(config.manualRankSelector + " " + username)) {
